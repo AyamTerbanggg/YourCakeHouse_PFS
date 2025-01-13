@@ -1,0 +1,90 @@
+*{
+    font-family: "Poppins", serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #E4E0E1;
+}
+.icon-nav{
+    position: relative;
+    color: #AB886D;
+}
+.icon-nav:hover{
+    color: #FFFFFF;
+}
+.icon-nav.active{
+    color: #FFFFFF;
+}
+.circle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffea00e0;
+    color: #493628;
+    text-align: center;
+    font-size: 12px;
+    top: 10px;
+    right: 130px;
+}
+
+.nav-link.active {
+    color: #AB886D;
+}
+
+.nav-link {
+    color: #e4e0e1a6; /* Warna putih untuk semua teks */
+    font-weight: bold;
+
+}
+.nav-link:hover {
+    color: #FFFFFF; /* Warna hover jika diinginkan */
+    font-weight: bold;
+}
+.navbar-brand {
+    font-weight: bold; /* Membuat teks brand menjadi bold */
+}
+
+section{
+    min-height: 80vh;
+}
+
+
+/*STYLE FOOTER*/
+footer{
+    position: static;
+    bottom: 0;
+    background-color: #493628;
+    color: white;
+}
+
+/* sidebar */
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 97vh;
+}
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
+.sidebar li {
+    list-style: none;
+    padding: 10px 5px;
+}
+.sidebar li:hover {
+    background-color: rgba(217, 217, 217, 0.518);
+    border-radius: 10px;
+    margin: 0;
+}
+.sidebar h5 {
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+}
+.form-control {
+    display: block; /* Pastikan tidak ada aturan `display: none;` */
+}
