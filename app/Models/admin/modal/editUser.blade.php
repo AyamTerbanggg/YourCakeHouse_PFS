@@ -1,0 +1,61 @@
+<div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ $title }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ route('updateDataUSer', $data->id ) }}" enctype="multipart/form-data" method="POST">
+                @method('PUT')
+                @csrf
+                <div class="modal-body">
+                    <div class="mb-3 row">
+                        <label for="name" class="col-sm-5 col-form-label">Nama</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                id="name" name="nama" autocomplete="off" value="{{$data->name}}">
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="email" class="col-sm-5 col-form-label">Email</label>
+                        <div class="col-sm-7">
+                            <input type="email" class="form-control" id="email" name="email" 
+                            autocomplete="off" value="{{$data->email}}">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="password" class="col-sm-5 col-form-label">Password</label>
+                        <div class="col-sm-7">
+                            <input type="password" class="form-control" id="password" name="password"
+                                autocomplete="off" value="{{password_needs_rehash($data->password,'PASSWORD_BCRYPT')}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function previewImg() {
+        const fotoIn = document.querySelector('#inputFoto');
+        const preview = document.querySelector('.preview');
+
+        preview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(fotoIn.files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            preview.src = oFREvent.target.result;
+        }
+    }
+</script>
